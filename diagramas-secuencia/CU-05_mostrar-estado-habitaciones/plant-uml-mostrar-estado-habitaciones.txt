@@ -1,0 +1,77 @@
+@startuml
+title
+<size:28><color:#1F4E79><b>CU-05 | Mostrar Estado de Habitaciones</b></color></size>
+<size:12><color:#4A6A85>GRUPO 24 - DSI</color></size>
+end title
+
+skinparam backgroundColor #F2F4F7-#E9EEF3
+skinparam shadowing true
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam defaultFontColor #2C3E50
+ 
+skinparam actor {
+  BackgroundColor #3498DB
+  BorderColor #1F618D
+  FontColor black
+  Style awesome
+}
+skinparam participant {
+  BackgroundColor #ECF0F1
+  BorderColor #7F8C8D
+  FontColor #2C3E50
+  BorderThickness 2
+  RoundCorner 20
+}
+skinparam sequence {
+  LifeLineBorderColor #2C3E50
+  LifeLineBackgroundColor #E8F6F3
+  LifeLineBorderThickness 2
+  ArrowColor #2C3E50
+  ArrowThickness 2
+}
+ 
+skinparam sequenceGroup {
+  BorderColor #1F618D
+  BackgroundColor #D6EAF8
+  FontColor #154360
+  FontSize 14
+}
+ 
+'====================================='
+ 
+actor Usuario
+participant "UI - Mostrar Estado de Habitaciones" as UI
+participant "GestorHabitacion" as Gestor
+participant "HabitacionDAO" as DAO
+ 
+Usuario -> UI : Solicita ver el estado de las habitaciones
+UI -> Usuario : Muestra interfaz para ingresar rango de fechas
+ 
+loop Ingreso de fechas hasta ser válidas
+    alt Usuario decide cancelar
+        Usuario -> UI : Cancelar operación
+        UI -> Usuario : Operación cancelada, volver al menú principal
+    else Usuario continúa
+        Usuario -> UI : ingresar(fechaDesde, fechaHasta)
+        UI -> Gestor : mostrarEstadoHabitaciones(fechaDesde, fechaHasta)
+ 
+        alt Formato inválido o campos vacíos
+            Gestor -> UI : mostrarError("Rango inválido o campos vacíos")
+            UI -> Usuario : Mostrar mensaje de error y permitir corrección
+        else Rango válido
+            Gestor -> DAO : obtenerEstadoHabitaciones(fechaDesde, fechaHasta)
+            DAO --> Gestor : list<Habitacion>
+ 
+            alt No hay habitaciones disponibles en ese rango
+                Gestor -> UI : mostrarError("No hay habitaciones disponibles")
+                UI -> Usuario : Mostrar mensaje de error y permitir corrección
+            else Lista obtenida
+                Gestor -> UI : list<Habitación>
+                UI -> Usuario : Mostrar estado de las habitaciones
+            end
+        end
+    end
+end
+ 
+@enduml
