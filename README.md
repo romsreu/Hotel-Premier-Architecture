@@ -1,8 +1,7 @@
 <img width="1280" height="640" alt="HPA" src="https://github.com/user-attachments/assets/539cca48-94a5-4978-8ebb-fd03831920c7" />
 
 ## Contenido del repositorio
-Este repositorio contiene la documentación de análisis y diseño utilizada para implementar el sistema [Hotel Premier](https://github.com/romsreu/Hotel_Premier). Incluye todos los diagramas producidos durante el proceso de diseño, así como el modelo de datos y el script de creación de la base de datos. La implementación final del sistema se basa en esta documentación, con posibles diferencias menores surgidas durante la codificación.  
-Este material sirve como base para revisar, mantener o ampliar el sistema en el futuro.
+Este repositorio contiene la documentación de análisis y diseño utilizada para implementar el sistema [Hotel Premier](https://github.com/romsreu/Hotel_Premier). Incluye todos los diagramas producidos durante el proceso de diseño, así como el modelo de datos y el script de creación de la base de datos. La implementación final del sistema se basa en esta documentación, con posibles diferencias menores surgidas durante la codificación. Este material sirve como base para revisar, mantener o ampliar el sistema en el futuro.
 
 ## **1. Diagrama de entradas y salidas**
 Contiene los diagramas de entradas y salidas del sistema, incluyendo:
