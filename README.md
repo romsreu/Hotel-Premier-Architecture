@@ -66,15 +66,12 @@ Esta carpeta reúne todos los documentos relacionados con el modelo de datos del
 ### Incluye:
 
 - **DER completo del sistema**  
-  Representa las entidades principales, sus atributos, claves primarias, claves foráneas y las cardinalidades entre tablas.  
-  Es el modelo conceptual que describe la estructura lógica de la base de datos.
+  Representa las entidades principales, sus atributos, claves primarias, claves foráneas y las cardinalidades entre tablas. Es el modelo conceptual que describe la estructura lógica de la base de datos.
 
 - **Diagrama de Tablas**  
-  Vista tabular del esquema físico, mostrando todas las columnas de cada tabla, sus tipos de datos, restricciones y relaciones.  
-  Permite visualizar de forma directa cómo se implementan las entidades del DER en la base de datos real.
+  Vista tabular del esquema físico, mostrando todas las columnas de cada tabla, sus tipos de datos, restricciones y relaciones. Permite visualizar de forma directa cómo se implementan las entidades del DER en la base de datos real.
 
 - **Script SQL de creación de la base de datos (DDL)**  
-  Archivo SQL que crea todas las tablas, claves primarias, claves foráneas, índices y restricciones necesarias.  
-  Este script permite reconstruir, replicar o migrar la base de datos sin necesidad de herramientas adicionales.
+  Archivo SQL que crea todas las tablas, claves primarias, claves foráneas, índices y restricciones necesarias. Este script permite reconstruir, replicar o migrar la base de datos sin necesidad de herramientas adicionales.
 
 
